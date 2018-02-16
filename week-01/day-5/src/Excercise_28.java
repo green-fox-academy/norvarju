@@ -21,7 +21,7 @@ public class Excercise_28 {
         for (int i = 0; i < number; i++) {
             for (int j = 0; j < number; j++) {
                 if (j <= i) {
-                    System.out.print("  *");
+                    System.out.print("*");
                 } else {
                     System.out.print("   ");
                 }
