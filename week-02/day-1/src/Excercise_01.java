@@ -4,10 +4,10 @@ public class Excercise_01 {
 // - Create a function called `doubling` that doubles it's input parameter and returns with an integer
 // - Print the result of `doubling(ak)`
         int ak = 123;
-        doublingFunction(ak);
+        doubling(ak);
     }
 
-        public static void doublingFunction(int result) {
+        public static void doubling(int result) {
             System.out.println(result*2);
     }
 }
