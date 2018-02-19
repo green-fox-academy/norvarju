@@ -23,7 +23,7 @@ public class Excercise_13 {
             }
             System.out.println();
         }
-        
+
         // Maybe the proper solution
 
         int[][] matrix2 = new int[4][4];
