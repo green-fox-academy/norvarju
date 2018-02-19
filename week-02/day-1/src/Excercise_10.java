@@ -13,6 +13,6 @@ public class Excercise_10 {
                 s[i] = 4;
             }
         }
-        System.out.println(Arrays.toString(s)); 
+        System.out.println(Arrays.toString(s));
     }
 }
