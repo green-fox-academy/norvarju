@@ -10,4 +10,4 @@ public class Excercise_01 {
         public static void doubling(int result) {
             System.out.println(result*2);
     }
-}
+            }

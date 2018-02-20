@@ -10,8 +10,13 @@ public class Excercise_07_matchmaking {
         // Exepected output: "Eve", "Joe", "Ashley", "Fred"...
 
         //System.out.println(makingMatches(girls, boys));
-        for (int i = 0; i < girls.size(); i++) {
-                System.out.print(girls.get(i) + " " + boys.get(i) + " ");
-            }
+        names(boys, girls);
+    }
+    public static ArrayList names(ArrayList<String> dudes, ArrayList<String> chicks){
+        for (int i = 0; i < chicks.size(); i++) {
+            System.out.print(dudes.get(i) + " " + chicks.get(i) + " ");
+        }
+        System.out.print(dudes.get(5));
+        return chicks;
     }
 }

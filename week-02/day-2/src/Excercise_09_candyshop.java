@@ -16,13 +16,20 @@ public class Excercise_09_candyshop {
         //System.out.println(sweets(arrayList));
         // Expected output: "Cupcake", "Croissant", "Brownie", "Ice cream"
         //System.out.println(arrayList.toString());
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (arrayList.get(i).equals(2)) {
-                arrayList.set(i, "Croissan");
-            } else if (arrayList.get(i).equals(false)) {
-                arrayList.set(i, "Ice cream");
+
+        sweets(arrayList);
+    }
+
+
+    public static ArrayList sweets(ArrayList<Object> yummy) {
+        for (int i = 0; i < yummy.size(); i++) {
+            if (yummy.get(i).equals(2)) {
+                yummy.set(i, "Croissan");
+            } else if (yummy.get(i).equals(false)) {
+                yummy.set(i, "Ice cream");
             }
         }
-        System.out.println(arrayList.toString());
+        System.out.println(yummy.toString());
+        return yummy;
     }
 }
