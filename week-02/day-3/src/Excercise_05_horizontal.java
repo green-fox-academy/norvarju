@@ -1,18 +1,18 @@
 import javax.swing.*;
 
-        import java.awt.*;
+import java.awt.*;
 
-        import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Excercise_04_tothecenter {
+public class Excercise_05_horizontal {
     public static void mainDraw(Graphics graphics) {
         // Create a line drawing function that takes 2 parameters:
         // The x and y coordinates of the line's starting point
-        // and draws a line from that point to the center of the canvas.
+        // and draws a 50 long horizontal line from that point.
         // Draw 3 lines with that function. Use loop for that.
         int firstCo = (int) (Math.random() * 320);
         int secondCo = (int) (Math.random() * 343);
-        drawLineForMe(graphics, firstCo, secondCo);
+        horizontalLines(graphics, firstCo, secondCo);
     }
 
     // Don't touch the code below
@@ -33,15 +33,14 @@ public class Excercise_04_tothecenter {
         protected void paintComponent(Graphics graphics) {
             super.paintComponent(graphics);
             mainDraw(graphics);
-
         }
     }
-        public static void drawLineForMe(Graphics graphics, int coordinateX, int coordinateY) {
-            for (int i = 0; i < 3; i++) {
-                coordinateX = (int) (Math.random() * (320));
-                coordinateY = (int) (Math.random() * (340));
-                graphics.setColor(Color.RED);
-                graphics.drawLine(coordinateX, coordinateY, 160, (int) 171.5);
-            }
+
+    public static void horizontalLines (Graphics graphics, int coordinateX, int coordinateY){
+        for (int i = 0; i < 3; i++) {
+            coordinateX = (int) (Math.random() * 320);
+            coordinateY = (int) (Math.random() * 343);
+            graphics.drawLine(coordinateX, coordinateY, (coordinateX + 50), coordinateY);
         }
+    }
 }
