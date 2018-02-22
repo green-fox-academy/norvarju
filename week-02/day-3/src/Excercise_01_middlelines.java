@@ -8,8 +8,8 @@ public class Excercise_01_middlelines {
     public static void mainDraw(Graphics graphics){
         // draw a red horizontal line to the canvas' middle.
         // draw a green vertical line to the canvas' middle.
-
-
+        graphics.drawLine(0, (int)171.5, 320, (int)171.5);
+        graphics.drawLine(160, 0, 160, 343);
     }
 
     // Don't touch the code below
@@ -30,8 +30,6 @@ public class Excercise_01_middlelines {
         protected void paintComponent(Graphics graphics) {
             super.paintComponent(graphics);
             mainDraw(graphics);
-            graphics.drawLine(0, (int)171.5, 320, (int)171.5);
-            graphics.drawLine(160, 0, 160, 343);
         }
     }
 }

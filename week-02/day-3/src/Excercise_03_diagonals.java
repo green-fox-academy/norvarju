@@ -8,7 +8,10 @@ public class Excercise_03_diagonals {
     public static void mainDraw(Graphics graphics) {
         // Draw the canvas' diagonals.
         // If it starts from the upper-left corner it should be green, otherwise it should be red.
-
+        graphics.setColor(Color.GREEN);
+        graphics.drawLine(0, 0, 320, 343);
+        graphics.setColor(Color.RED);
+        graphics.drawLine(320, 0, 0, 343);
 
 
     }
@@ -31,10 +34,6 @@ public class Excercise_03_diagonals {
         protected void paintComponent(Graphics graphics) {
             super.paintComponent(graphics);
             mainDraw(graphics);
-            graphics.setColor(Color.GREEN);
-            graphics.drawLine(0, 0, 320, 343);
-            graphics.setColor(Color.RED);
-            graphics.drawLine(320, 0, 0, 343);
         }
     }
 }
