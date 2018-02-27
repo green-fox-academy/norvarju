@@ -27,7 +27,7 @@ public class Countlines {
             }
         }
             catch (IOException e){
-                System.out.println("Unable to read file: something.txt");
+                System.out.println("0");
             }
         }
 
