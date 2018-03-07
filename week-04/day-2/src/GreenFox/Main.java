@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         ArrayList<Person> people = new ArrayList<>();
 
         Person mark = new Person("Mark", 46, "male");
@@ -45,5 +45,10 @@ public class Main {
         awesome.addMentor(mentor);
         awesome.addMentor(gandhi);
         awesome.info();
+
+        Student john2 = (Student) john.clone();
+
+        john2.introduce();
+
     }
 }

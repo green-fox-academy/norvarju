@@ -1,6 +1,6 @@
 package GreenFox;
 
-public class Student extends Person {
+public class Student extends Person implements Cloneable{
 
     private String previousOrganization;
     private int skippedDays;
@@ -17,6 +17,11 @@ public class Student extends Person {
         this.skippedDays = 0;
     }
 
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
     public void getGoal(){
         System.out.println("Be a junior software developer.");
     }
@@ -31,4 +36,7 @@ public class Student extends Person {
         skippedDays = skippedDays + numberOfDays;
         return skippedDays;
     }
+
+
+
 }
