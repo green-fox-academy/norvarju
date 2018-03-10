@@ -27,8 +27,6 @@ public class Dominoes {
 
         Collections.sort(dominoes);
         System.out.println(dominoes.toString());
-
-
     }
 
     static List<Domino> initializeDominoes() {
