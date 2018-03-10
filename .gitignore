@@ -3,4 +3,14 @@ out
 *.iml 
 *.xml
 Practice*.java
+week-02/day-1/src/Excercise_05.java
+week-02/day-2/src/Excercise_11_isinlist.java
+week-02/day-3/src/Excercise_13_checkerboard.java
+week-03/day-3/src/Blogpost.java
+week-03/day-3/src/FleetOfThings.java
+week-03/day-4/src/Counter.java
+week-03/day-4/src/Numberadder.java   
+week-03/day-4/src/Refactorio.java
+week-04/day-2/src/Garden/Main.java   
+week-04/day-4/testApple/AppleTest.java
 
