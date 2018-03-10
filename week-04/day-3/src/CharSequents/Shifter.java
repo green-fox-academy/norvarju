@@ -10,8 +10,6 @@ public class Shifter implements CharSequence{
         this.shiftAmount = shiftAmount;
     }
 
-
-
     @Override
     public int length() {
         return wordToShift.length();

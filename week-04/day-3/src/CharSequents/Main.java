@@ -9,6 +9,5 @@ public class Main {
         System.out.println(myWord.length());
         System.out.println(myWord.charAt(2));
         System.out.println(myShifted.charAt(0));
-
     }
 }

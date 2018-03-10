@@ -10,7 +10,6 @@ public class Gnirts implements CharSequence {
         this.word = word;
     }
 
-
     public int length() {
         return word.length();
     }
