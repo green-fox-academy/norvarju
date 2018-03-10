@@ -1,5 +1,6 @@
 package main.java.music;
 
+
 public class StringedInstrument extends Instrument {
 
     private int numberOfStrings;
