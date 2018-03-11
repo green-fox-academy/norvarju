@@ -1,8 +1,12 @@
 package Comparable;
 
+import java.awt.*;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
 import java.util.Arrays;
 
-public class Domino implements Comparable<Domino>{
+public class Domino implements Comparable<Domino>, Printable1 {
     private final int[] values;
 
     public Domino(int valueA, int valueB) {
@@ -26,5 +30,10 @@ public class Domino implements Comparable<Domino>{
             return 1;}
         else {
             return -1;}
+    }
+
+    @Override
+    public void printAllFields() {
+        System.out.println(Arrays.toString(values));
     }
 }
