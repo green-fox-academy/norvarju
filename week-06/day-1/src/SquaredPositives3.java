@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class SquaredPositives3 {
   public static void main(String[] args) {
@@ -10,5 +11,13 @@ public class SquaredPositives3 {
             .filter(n -> n > 0)
             .map(n -> n * n)
             .forEach(n -> System.out.println(n));
+    //Old method:
+    List<Integer> squareNums = new ArrayList<>();
+    for (int i = 0; i < numbers.size(); i++) {
+      if(numbers.get(i) > 0) {
+        squareNums.add(numbers.get(i) * numbers.get(i));
+      }
+    }
+    System.out.println(squareNums);
   }
 }
