@@ -12,5 +12,13 @@ public class FromAToIStrings6 {
             .filter(s -> s.startsWith("A") && s.endsWith("I"))
             .collect(Collectors.toList());
     System.out.println(filteredCities);
+    //Old method:
+    List<String> filteredList = new ArrayList<>();
+    for (int i = 0; i < cities.size(); i++) {
+      if(cities.get(i).startsWith("A") && cities.get(i).endsWith("I")){
+        filteredList.add(cities.get(i));
+      }
+    }
+    System.out.println(filteredList);
   }
 }
