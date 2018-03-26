@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ArrayToString {
+public class ArrayToString9 {
   public static void main(String[] args) {
     //Write a Stream Expression to convert a char array to a string!
     Character[] myChars = {'b', 'e', 'h', 'a', 'p', 'p', 'y'};
