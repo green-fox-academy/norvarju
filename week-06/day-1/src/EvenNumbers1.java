@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class EvenNumbers1 {
   public static void main(String[] args) {
@@ -8,5 +9,13 @@ public class EvenNumbers1 {
     numbers.stream()
             .filter(n -> n%2 == 0)
             .forEach(System.out::println);
+    //Old method:
+    List<Integer> evenNumbers = new ArrayList<>();
+    for (int i = 0; i < numbers.size(); i++) {
+      if(numbers.get(i)%2 == 0){
+        evenNumbers.add(numbers.get(i));
+      }
+    }
+    System.out.println(evenNumbers);
   }
 }
