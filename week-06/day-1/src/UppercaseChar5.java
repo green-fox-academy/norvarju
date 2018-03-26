@@ -15,5 +15,13 @@ public class UppercaseChar5 {
             .collect(Collectors.toList());
 
     System.out.println(uppercaseChars);
+    //Old method:
+    List<Character> uppercase = new ArrayList<>();
+    for (int i = 0; i < myString.length(); i++) {
+      if(Character.isUpperCase(myString.charAt(i))){
+        uppercase.add(myString.charAt(i));
+      }
+    }
+    System.out.println(uppercase);
   }
 }
