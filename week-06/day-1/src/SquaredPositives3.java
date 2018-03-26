@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class SquaredPositives {
+public class SquaredPositives3 {
   public static void main(String[] args) {
     //Write a Stream Expression to get the squared value of the positive numbers from the
     //following array:
