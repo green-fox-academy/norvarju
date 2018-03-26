@@ -12,6 +12,7 @@ public class FrequencyOfNumbers8 {
             .stream()
             .collect(Collectors.groupingBy(n -> n, Collectors.counting()));
     System.out.println(frequencyChecker);
+    //Old solution:
     Map<Integer, Integer> myHashMap = new HashMap<>();
     for (int i = 0; i < numbers.size(); i++) {
       if(!myHashMap.containsKey(numbers.get(i))){
