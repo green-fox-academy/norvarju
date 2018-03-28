@@ -66,20 +66,24 @@ public class ToDoList {
             .forEach(System.out::println);
   }
 
-  public void converter(){
+  public void converter() {
     List<String> convertedContent = new ArrayList<>();
     String convertedContentString = "";
     manipulator.Reader(convertedContent);
     for (int i = 0; i < convertedContent.size(); i++) {
-      convertedContentString += convertedContent.get(i);
-    }
-    String[] contentArray = convertedContentString.split("%@#");
-    myToDoList.add(new ToDo(Integer.parseInt(contentArray[0]), LocalDateTime.parse
-            (contentArray[1]),
-            LocalDateTime.parse(contentArray[2]),
-            Integer.parseInt(contentArray[3]), contentArray[4]));
+        convertedContentString += convertedContent.get(i);
+      }
+      String[] contentArray = convertedContentString.split("%@#");
+      for (int j = 0; j < contentArray.length/5; j++) {
+        myToDoList.add(new ToDo(Integer.parseInt(contentArray[j * 5]), LocalDateTime.parse
+                (contentArray[j * 5 + 1]), LocalDateTime.parse(contentArray[j * 5 + 2]), Integer
+                .parseInt(contentArray[j * 5 + 3]), contentArray[j * 5 + 4]));
 
-  }
+        //myToDoList.add(new ToDo(Integer.parseInt(contentArray[0]), LocalDateTime.parse
+        //(contentArray[1]), LocalDateTime.parse(contentArray[2]), Integer.parseInt
+        //(contentArray[3]), contentArray[4]));
+      }
+    }
 
   @Override
   public String toString() {

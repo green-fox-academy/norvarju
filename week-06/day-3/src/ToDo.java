@@ -31,12 +31,12 @@ public class ToDo {
     this.createdAt = createdAt;
     this.completedAt = completedAt;
     this.complitionTime = complitionTime;
-    this.description = args[1];
+    this.description = description;
   }
 
   @Override
   public String toString() {
-    return id + "%@#" + completedAt + "%@#" + completedAt + "%@#" + complitionTime + "%@#" +
-            args[1] + "%@#";
+    return id + "%@#" + createdAt + "%@#" + completedAt + "%@#" + complitionTime + "%@#" +
+            description + "%@#";
   }
 }
