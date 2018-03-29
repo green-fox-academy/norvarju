@@ -20,7 +20,8 @@ public class ToDoList {
   }
 
   public void addTask(){
-    myToDoList.add(new ToDo(args));
+    ToDo myTodo = new ToDo(args);
+    myToDoList.add(myTodo);
     String content = "";
     for (int i = 0; i < myToDoList.size(); i++) {
       content += myToDoList.get(i);
@@ -36,6 +37,7 @@ public class ToDoList {
   public void listTasks(){
     myToDoList.stream()
             .forEach(System.out::println);
+    /*System.out.println(myToDoList.toString());*/
   }
 
   public void converter() {
@@ -52,7 +54,6 @@ public class ToDoList {
                 .parseInt(contentArray[j * 5 + 3]), contentArray[j * 5 + 4]));
       }
     }
-
 
   public String toString() {
     String result = "";

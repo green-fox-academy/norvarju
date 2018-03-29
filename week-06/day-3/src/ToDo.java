@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ToDo {
 
-  private static final AtomicInteger number = new AtomicInteger();
+  private static int previousId;
   private int id;
   private LocalDateTime createdAt;
   private LocalDateTime completedAt;
@@ -18,11 +18,13 @@ public class ToDo {
   private String description;
 
   public ToDo(String[] args) {
-    this.id = number.incrementAndGet();
+    previousId++;
+    this.id = previousId;
     this.createdAt = LocalDateTime.now();
     this.completedAt = LocalDateTime.now();
     this.args = args;
     scanner = new Scanner(System.in);
+    this.description = args[1];
     }
 
   public ToDo(int id, LocalDateTime createdAt, LocalDateTime completedAt, int complitionTime,
@@ -34,8 +36,11 @@ public class ToDo {
     this.description = description;
   }
 
+  public ToDo() {
+  }
+
   public String toString() {
-    return id + "%@#" + createdAt + "%@#" + completedAt + "%@#" + complitionTime + "%@#" +
-            args[1] + "%@#";
+    return id + "%@#" + createdAt + "%@#" + completedAt + "%@#" + complitionTime + "%@#" /*+
+          description + "%@#"*/;
   }
 }
