@@ -1,17 +1,13 @@
 public class Main {
   public static void main(String[] args) {
     ToDoList toDoList = new ToDoList(args);
-    System.out.println(toDoList.toString());
-    toDoList.converter();
-    System.out.println(toDoList.toString());
-    //ToDo toDo1 = new ToDo(args);
-    //toDoList.listTasks();
-    if (toDoList.noArgs()) {
-      toDoList.noArgsPrinter();
-    } else if (toDoList.isCompletionNeeded()) {
+    ArgumentHandler handler = new ArgumentHandler(args);
+    if (handler.noArgs()) {
+      handler.noArgsPrinter();
+    } else if (handler.isCompletionNeeded()) {
       toDoList.addTask();
       System.out.println(toDoList);
-    } else if (toDoList.isListNeeded()) {
+    } else if (handler.isListNeeded()) {
       toDoList.listTasks();
     }
   }

@@ -23,7 +23,7 @@ public class ToDo {
     this.completedAt = LocalDateTime.now();
     this.args = args;
     scanner = new Scanner(System.in);
-  }
+    }
 
   public ToDo(int id, LocalDateTime createdAt, LocalDateTime completedAt, int complitionTime,
               String description) {
@@ -34,9 +34,8 @@ public class ToDo {
     this.description = description;
   }
 
-  @Override
   public String toString() {
     return id + "%@#" + createdAt + "%@#" + completedAt + "%@#" + complitionTime + "%@#" +
-            description + "%@#";
+            args[1] + "%@#";
   }
 }
