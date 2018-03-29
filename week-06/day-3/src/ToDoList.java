@@ -22,9 +22,13 @@ public class ToDoList {
   }
 
   public void addTask(){
-    ToDo myTodo = new ToDo(args);
-    myToDoList.add(myTodo);
-    manipulator.writer(myToDoList);
+    if (args.length < 2){
+      System.out.println("Unable to add: no task provided");
+    } else {
+      ToDo myTodo = new ToDo(args);
+      myToDoList.add(myTodo);
+      manipulator.writer(myToDoList);
+    }
   }
 
   public void removeTask() {
@@ -39,8 +43,11 @@ public class ToDoList {
   }
 
   public void listTasks(){
-    myToDoList.stream()
-            .forEach(System.out::println);
+    if (myToDoList.size() == 0){
+      System.out.println("No todos for today");
+    } else {
+      myToDoList.stream().forEach(System.out::println);
+    }
   }
 
   public void converter() {
