@@ -32,13 +32,17 @@ public class ToDoList {
   }
 
   public void removeTask() {
-    if (args.length < 2) {
-      System.out.println("Unable to remove: no index provided");
-    } else if (Integer.parseInt(args[1]) > args.length) {
-      System.out.println("Unable to remove: index is out of bound");
-    } else {
-      myToDoList.remove(Integer.parseInt(args[1]) - 1);
-      manipulator.writer(myToDoList);
+    try {
+      if (args.length < 2) {
+        System.out.println("Unable to remove: no index provided");
+      } else if (Integer.parseInt(args[1]) > args.length) {
+        System.out.println("Unable to remove: index is out of bound");
+      } else {
+        myToDoList.remove(Integer.parseInt(args[1]) - 1);
+        manipulator.writer(myToDoList);
+      }
+    } catch (NumberFormatException e) {
+      System.out.println("Unsupported argument");
     }
   }
 

@@ -22,6 +22,10 @@ public class ArgumentHandler {
     return args[0].equals("-r") || args[0].equals("remove");
   }
 
+  /*public boolean unsupportedArg(){
+    return !isListNeeded() && !isCompletionNeeded() && !isRemovalNeeded() && !isCompleted();
+  }*/
+
   public void noArgsPrinter(){
     System.out.println("Command line todo application");
     System.out.println("-----------------------------");
@@ -30,6 +34,9 @@ public class ArgumentHandler {
     System.out.println("-a   Adds a new task");
     System.out.println("-r   Removes a task");
     System.out.println("-c   Completes a task");
+  }
 
+  public void unsupportedArgPrinter(){
+    System.out.println("Unsupported argument");
   }
 }
