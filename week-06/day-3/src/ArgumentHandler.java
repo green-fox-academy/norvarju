@@ -22,6 +22,10 @@ public class ArgumentHandler {
     return args[0].equals("-r") || args[0].equals("remove");
   }
 
+  public boolean isCheckNeeded(){
+    return args[0].equals("-c") || args[0].equals("check");
+  }
+
   /*public boolean unsupportedArg(){
     return !isListNeeded() && !isCompletionNeeded() && !isRemovalNeeded() && !isCompleted();
   }*/

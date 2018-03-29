@@ -16,6 +16,8 @@ public class Main {
       toDoList.removeTask();
     } else if (handler.isListNeeded()) {
       toDoList.listTasks();
+    } else if (handler.isCheckNeeded()) {
+      toDoList.checkTask();
     }
   }
 }

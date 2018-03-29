@@ -50,8 +50,14 @@ public class ToDoList {
     if (myToDoList.size() == 0){
       System.out.println("No todos for today");
     } else {
-      myToDoList.stream().forEach(System.out::println);
+      myToDoList.stream().map(t -> t.toPresent()).forEach(System.out::println);
     }
+  }
+
+  public void checkTask(){
+    myToDoList.get(Integer.parseInt(args[1])-1).setCompleted(true);
+    System.out.println(myToDoList);
+    manipulator.writer(myToDoList);
   }
 
   public void converter() {
@@ -62,10 +68,11 @@ public class ToDoList {
         convertedContentString += convertedContent.get(i);
       }
       String[] contentArray = convertedContentString.split("%@#");
-      for (int j = 0; j < contentArray.length/5; j++) {
-        myToDoList.add(new ToDo(Integer.parseInt(contentArray[j * 5]), LocalDateTime.parse
-                (contentArray[j * 5 + 1]), LocalDateTime.parse(contentArray[j * 5 + 2]), Integer
-                .parseInt(contentArray[j * 5 + 3]), contentArray[j * 5 + 4]));
+      for (int j = 0; j < contentArray.length/6; j++) {
+        myToDoList.add(new ToDo(Integer.parseInt(contentArray[j * 6]), LocalDateTime.parse
+                (contentArray[j * 6 + 1]), LocalDateTime.parse(contentArray[j * 6 + 2]), Integer
+                .parseInt(contentArray[j * 6 + 3]), contentArray[j * 6 + 4], Boolean
+                .parseBoolean(contentArray[j * 6 + 5])));
       }
     }
 
@@ -76,6 +83,14 @@ public class ToDoList {
       result += "\n";
     }
     return result;
+  }
+
+  public String toPresent() {
+    String resultToPresent = "";
+    for (int i = 0; i < myToDoList.size(); i++) {
+      resultToPresent += (i+1) + " - " + myToDoList.get(i).toPresent();
+    }
+    return resultToPresent;
   }
 
 

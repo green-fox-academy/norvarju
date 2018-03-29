@@ -14,7 +14,7 @@ public class ToDo {
   private int complitionTime;
   private String[] args;
   private Scanner scanner;
-  private boolean completed;
+  private boolean isCompleted;
   private String description;
 
   public ToDo(String[] args) {
@@ -24,22 +24,32 @@ public class ToDo {
     this.args = args;
     scanner = new Scanner(System.in);
     description = args[1];
+    isCompleted = false;
     }
 
   public ToDo(int id, LocalDateTime createdAt, LocalDateTime completedAt, int complitionTime,
-              String description) {
+              String description, boolean isCompleted) {
     this.id = id;
     this.createdAt = createdAt;
     this.completedAt = completedAt;
     this.complitionTime = complitionTime;
     this.description = description;
+    this.isCompleted = isCompleted;
   }
 
   public ToDo() {
   }
 
+  public void setCompleted(boolean completed) {
+    isCompleted = completed;
+  }
+
   public String toString() {
     return id + "%@#" + createdAt + "%@#" + completedAt + "%@#" + complitionTime + "%@#" +
-          description + "%@#";
+          description + "%@#" + isCompleted + "%@#";
+  }
+
+  public String toPresent() {
+    return (isCompleted ? "[X] " : "[ ] ") + description;
   }
 }
