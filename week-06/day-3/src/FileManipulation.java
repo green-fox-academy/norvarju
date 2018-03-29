@@ -25,9 +25,27 @@ public class FileManipulation {
     }
   }
 
-  public void Writer(String content){
+  /*public void Writer(List<ToDo> content){
     try {
-      Files.write(filePath, content.getBytes(), StandardOpenOption.APPEND);
+      String contentString = "";
+      for (int i = 0; i < content.size(); i++) {
+        contentString += content.get(i);
+        contentString += "\n";
+      }
+      Files.write(filePath, contentString.getBytes(), StandardOpenOption.APPEND);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }*/
+
+  public void writer(List<ToDo> content){
+    try {
+      String contentString = "";
+      for (int i = 0; i < content.size(); i++) {
+        contentString += content.get(i);
+        contentString += "\n";
+      }
+      Files.write(filePath, contentString.getBytes());
     } catch (IOException e) {
       e.printStackTrace();
     }

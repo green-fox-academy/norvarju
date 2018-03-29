@@ -1,3 +1,5 @@
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,22 +24,18 @@ public class ToDoList {
   public void addTask(){
     ToDo myTodo = new ToDo(args);
     myToDoList.add(myTodo);
-    String content = "";
-    for (int i = 0; i < myToDoList.size(); i++) {
-      content += myToDoList.get(i);
-      content += "\n";
-    }
-    manipulator.Writer(content);
+    manipulator.writer(myToDoList);
   }
 
   public void removeTask(){
-
+    myToDoList.remove(Integer.parseInt(args[1])-1);
+    System.out.println("Removal Completed");
+    manipulator.writer(myToDoList);
   }
 
   public void listTasks(){
     myToDoList.stream()
             .forEach(System.out::println);
-    /*System.out.println(myToDoList.toString());*/
   }
 
   public void converter() {

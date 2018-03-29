@@ -12,6 +12,8 @@ public class Main {
     } else if (handler.isCompletionNeeded()) {
       toDoList.addTask();
       System.out.println(toDoList);
+    } else if (handler.isRemovalNeeded()){
+      toDoList.removeTask();
     } else if (handler.isListNeeded()) {
       toDoList.listTasks();
     }
