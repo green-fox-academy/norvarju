@@ -26,6 +26,10 @@ public class ArgumentHandler {
     return args[0].equals("-c") || args[0].equals("check");
   }
 
+  public boolean isUpdateNeeded(){
+    return args[0].equals("-u") || args[0].equals("update");
+  }
+
   /*public boolean unsupportedArg(){
     return !isListNeeded() && !isCompletionNeeded() && !isRemovalNeeded() && !isCompleted();
   }*/
@@ -38,6 +42,7 @@ public class ArgumentHandler {
     System.out.println("-a   Adds a new task");
     System.out.println("-r   Removes a task");
     System.out.println("-c   Completes a task");
+    System.out.println("-u   Update description");
   }
 
   public void unsupportedArgPrinter(){

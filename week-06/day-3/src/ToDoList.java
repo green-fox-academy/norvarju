@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,9 +56,21 @@ public class ToDoList {
   }
 
   public void checkTask(){
-    myToDoList.get(Integer.parseInt(args[1])-1).setCompleted(true);
+    ToDo task = myToDoList.get(Integer.parseInt(args[1])-1);
+    task.setCompleted(true);
+    task.setCompletedAt(LocalDateTime.now());
+    task.setComplitionTime(ChronoUnit.DAYS.between(task.getCreatedAt(),
+            task
+            .getCompletedAt()));
     System.out.println(myToDoList);
     manipulator.writer(myToDoList);
+  }
+
+  public void updateTask(){
+    ToDo task = myToDoList.get(Integer.parseInt(args[1])-1);
+    task.setDescription(args[2]);
+    manipulator.writer(myToDoList);
+
   }
 
   public void converter() {

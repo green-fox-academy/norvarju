@@ -18,6 +18,8 @@ public class Main {
       toDoList.listTasks();
     } else if (handler.isCheckNeeded()) {
       toDoList.checkTask();
+    } else if (handler.isUpdateNeeded()) {
+      toDoList.updateTask();
     }
   }
 }

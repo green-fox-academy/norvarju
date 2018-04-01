@@ -11,7 +11,7 @@ public class ToDo {
   private int id;
   private LocalDateTime createdAt;
   private LocalDateTime completedAt;
-  private int complitionTime;
+  private long complitionTime;
   private String[] args;
   private Scanner scanner;
   private boolean isCompleted;
@@ -20,14 +20,15 @@ public class ToDo {
   public ToDo(String[] args) {
     this.id = number.incrementAndGet();
     this.createdAt = LocalDateTime.now();
-    this.completedAt = LocalDateTime.now();
+    this.completedAt = LocalDateTime.of(2000, 1, 1, 0, 0);
+    this.complitionTime = 0;
     this.args = args;
     scanner = new Scanner(System.in);
     description = args[1];
     isCompleted = false;
     }
 
-  public ToDo(int id, LocalDateTime createdAt, LocalDateTime completedAt, int complitionTime,
+  public ToDo(int id, LocalDateTime createdAt, LocalDateTime completedAt, long complitionTime,
               String description, boolean isCompleted) {
     this.id = id;
     this.createdAt = createdAt;
@@ -40,8 +41,28 @@ public class ToDo {
   public ToDo() {
   }
 
+  public LocalDateTime getCreatedAt() {
+    return createdAt;
+  }
+
+  public LocalDateTime getCompletedAt() {
+    return completedAt;
+  }
+
   public void setCompleted(boolean completed) {
     isCompleted = completed;
+  }
+
+  public void setCompletedAt(LocalDateTime completedAt) {
+    this.completedAt = completedAt;
+  }
+
+  public void setComplitionTime(long complitionTime) {
+    this.complitionTime = complitionTime;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   public String toString() {
