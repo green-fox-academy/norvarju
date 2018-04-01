@@ -30,9 +30,10 @@ public class ArgumentHandler {
     return args[0].equals("-u") || args[0].equals("update");
   }
 
-  /*public boolean unsupportedArg(){
-    return !isListNeeded() && !isCompletionNeeded() && !isRemovalNeeded() && !isCompleted();
-  }*/
+  public boolean unsupportedArg(){
+    return !isListNeeded() && !isCompletionNeeded() && !isRemovalNeeded() && !isCheckNeeded() &&
+            !isUpdateNeeded();
+  }
 
   public void noArgsPrinter(){
     System.out.println("Command line todo application");

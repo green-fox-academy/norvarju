@@ -20,6 +20,8 @@ public class Main {
       toDoList.checkTask();
     } else if (handler.isUpdateNeeded()) {
       toDoList.updateTask();
+    } else if (handler.unsupportedArg()){
+      handler.unsupportedArgPrinter();
     }
   }
 }
