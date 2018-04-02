@@ -13,7 +13,7 @@ public class ToDo {
   private LocalDateTime completedAt;
   private long complitionTime;
   private String[] args;
-  private Scanner scanner;
+  //private Scanner scanner;
   private boolean isCompleted;
   private String description;
 
@@ -23,7 +23,7 @@ public class ToDo {
     this.completedAt = LocalDateTime.of(2000, 1, 1, 0, 0);
     this.complitionTime = 0;
     this.args = args;
-    scanner = new Scanner(System.in);
+    //scanner = new Scanner(System.in);
     description = args[1];
     isCompleted = false;
     }

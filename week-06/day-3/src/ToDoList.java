@@ -15,11 +15,13 @@ public class ToDoList {
   private List<ToDo> myToDoList;
   private String[] args;
   private Path filePath;
+  private int numberOfRelevantData;
 
   public ToDoList(String[] args) {
     myToDoList = new ArrayList<>();
     this.args = args;
     filePath = Paths.get("C:/Users/norac/Desktop/Gitpractice/Greenfox/norvarju/week-06/day-3/file.txt");
+    numberOfRelevantData = 6;
   }
 
   public void addTask(){
@@ -82,11 +84,13 @@ public class ToDoList {
         convertedContentString += convertedContent.get(i);
       }
       String[] contentArray = convertedContentString.split("%@#");
-      for (int j = 0; j < contentArray.length/6; j++) {
-        myToDoList.add(new ToDo(Integer.parseInt(contentArray[j * 6]), LocalDateTime.parse
-                (contentArray[j * 6 + 1]), LocalDateTime.parse(contentArray[j * 6 + 2]), Integer
-                .parseInt(contentArray[j * 6 + 3]), contentArray[j * 6 + 4], Boolean
-                .parseBoolean(contentArray[j * 6 + 5])));
+      for (int j = 0; j < contentArray.length/numberOfRelevantData; j++) {
+        myToDoList.add(new ToDo(Integer.parseInt(contentArray[j * numberOfRelevantData]), LocalDateTime.parse
+                (contentArray[j * numberOfRelevantData + 1]), LocalDateTime.parse(contentArray[j
+                * numberOfRelevantData + 2]), Integer
+                .parseInt(contentArray[j * numberOfRelevantData + 3]), contentArray[j * numberOfRelevantData + 4],
+                Boolean
+                .parseBoolean(contentArray[j * numberOfRelevantData + 5])));
       }
     }
 
