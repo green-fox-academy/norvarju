@@ -85,12 +85,25 @@ public class ToDoList {
       }
       String[] contentArray = convertedContentString.split("%@#");
       for (int j = 0; j < contentArray.length/numberOfRelevantData; j++) {
-        myToDoList.add(new ToDo(Integer.parseInt(contentArray[j * numberOfRelevantData]), LocalDateTime.parse
+        int newId = Integer.parseInt(contentArray[j*numberOfRelevantData]);
+        LocalDateTime newCreatedAt = LocalDateTime.parse(contentArray[j * numberOfRelevantData
+                + 1]);
+        LocalDateTime newCompletedAt = LocalDateTime.parse(contentArray[j
+                * numberOfRelevantData + 2]);
+        int newCompletionTime = Integer
+                .parseInt(contentArray[j * numberOfRelevantData + 3]);
+        String newDescription = contentArray[j * numberOfRelevantData + 4];
+        boolean newIsCompleted = Boolean
+                .parseBoolean(contentArray[j * numberOfRelevantData + 5]);
+        myToDoList.add(new ToDo(newId, newCreatedAt, newCompletedAt, newCompletionTime,
+                newDescription, newIsCompleted));
+        /*myToDoList.add(new ToDo(Integer.parseInt(contentArray[j * numberOfRelevantData]),
+                LocalDateTime.parse
                 (contentArray[j * numberOfRelevantData + 1]), LocalDateTime.parse(contentArray[j
                 * numberOfRelevantData + 2]), Integer
                 .parseInt(contentArray[j * numberOfRelevantData + 3]), contentArray[j * numberOfRelevantData + 4],
                 Boolean
-                .parseBoolean(contentArray[j * numberOfRelevantData + 5])));
+                .parseBoolean(contentArray[j * numberOfRelevantData + 5])));*/
       }
     }
 
