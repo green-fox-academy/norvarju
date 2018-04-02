@@ -97,13 +97,6 @@ public class ToDoList {
                 .parseBoolean(contentArray[j * numberOfRelevantData + 5]);
         myToDoList.add(new ToDo(newId, newCreatedAt, newCompletedAt, newCompletionTime,
                 newDescription, newIsCompleted));
-        /*myToDoList.add(new ToDo(Integer.parseInt(contentArray[j * numberOfRelevantData]),
-                LocalDateTime.parse
-                (contentArray[j * numberOfRelevantData + 1]), LocalDateTime.parse(contentArray[j
-                * numberOfRelevantData + 2]), Integer
-                .parseInt(contentArray[j * numberOfRelevantData + 3]), contentArray[j * numberOfRelevantData + 4],
-                Boolean
-                .parseBoolean(contentArray[j * numberOfRelevantData + 5])));*/
       }
     }
 
@@ -115,14 +108,4 @@ public class ToDoList {
     }
     return result;
   }
-
-  public String toPresent() {
-    String resultToPresent = "";
-    for (int i = 0; i < myToDoList.size(); i++) {
-      resultToPresent += (i+1) + " - " + myToDoList.get(i).toPresent();
-    }
-    return resultToPresent;
-  }
-
-
 }

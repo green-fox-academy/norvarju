@@ -19,7 +19,6 @@ public class FileManipulation {
       for (String line: Files.readAllLines(filePath)) {
         contentList.add(line);
       }
-      //contentList = Files.readAllLines(filePath);
     } catch (IOException e) {
       e.printStackTrace();
     }
