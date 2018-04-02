@@ -16,12 +16,15 @@ public class ToDoList {
   private String[] args;
   private Path filePath;
   private int numberOfRelevantData;
+  private Path incrementingNumberFile;
 
   public ToDoList(String[] args) {
     myToDoList = new ArrayList<>();
     this.args = args;
     filePath = Paths.get("C:/Users/norac/Desktop/Gitpractice/Greenfox/norvarju/week-06/day-3/file.txt");
     numberOfRelevantData = 6;
+    this.incrementingNumberFile = Paths.get
+            ("C:/Users/norac/Desktop/Gitpractice/Greenfox/norvarju/week-06/day-3/number.txt");
   }
 
   public void addTask(){
@@ -29,6 +32,14 @@ public class ToDoList {
       System.out.println("Unable to add: no task provided");
     } else {
       ToDo myTodo = new ToDo(args);
+      try {
+        int numberForId = Integer.parseInt(Files.readAllLines(incrementingNumberFile).get(0));
+        myTodo.setId(numberForId + 1);
+        int newNumberOfId = numberForId + 1;
+        Files.write(incrementingNumberFile, String.valueOf(newNumberOfId).getBytes());
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
       myToDoList.add(myTodo);
       manipulator.writer(myToDoList);
     }
