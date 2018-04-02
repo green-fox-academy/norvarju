@@ -36,8 +36,9 @@ public class ToDoList {
     try {
       if (args.length < 2) {
         System.out.println("Unable to remove: no index provided");
-      } else if (Integer.parseInt(args[1]) > args.length) {
+      } else if (Integer.parseInt(args[1]) > myToDoList.size()) {
         System.out.println("Unable to remove: index is out of bound");
+        System.out.println(myToDoList.size());
       } else {
         myToDoList.remove(Integer.parseInt(args[1]) - 1);
         manipulator.writer(myToDoList);
