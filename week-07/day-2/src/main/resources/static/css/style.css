@@ -1,0 +1,10 @@
+body {
+    font-size: 36px;
+    font-family: "Bauhaus 93";
+}
+
+table {
+    border: 1px solid #000;
+    background-color: magenta;
+    text-align: center;
+}

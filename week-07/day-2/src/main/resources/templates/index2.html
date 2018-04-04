@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Thymeleaf Exercise #</title>
-    <link rel="stylesheet" th:href="@{/style.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
     <meta charset="utf-8" />
 </head>
 <body>
@@ -10,12 +10,10 @@
     <tr th:each="account : ${accounts}" th:style="${account.isKing()} ? 'color: ' + ${color} : 'color: black'">
         <td th:text="${account.getId()}"/>
         <td th:text="${account.getName()}"/>
-        <td th:text="${account.balanceWith2Decimals()}"/>
-        <td th:text="${account.getCurrency()}"/>
+        <td th:text="${account.balanceWith2Decimals()} + ' ' + ${account.getCurrency()}"/>
         <td th:text="${account.getAnimalType()}"/>
         <td th:text="${account.kingIndicator()}"/>
-        <td th:text="${account.kingIndicator()}"/>
-        <td><input type="button" value="Increase balance"></td>
+        <td><input type="button" value="Increase balance" action="@{/list}"/></td>
     </tr>
 </table>
 </body>
