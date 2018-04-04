@@ -1,19 +1,17 @@
 package com.greenfoxacademy.springstart.com.greenfoxacademy.springstart.model;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-
 public class BankAccount {
 
   private String name;
-  private String balance;
+  private float balance;
   private String animalType;
-  private NumberFormat formatter;
+  private String currency;
 
-  public BankAccount(String name, String balance, String animalType) {
+  public BankAccount(String name, float balance, String animalType) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
+    this.currency = "Zebra";
   }
 
   public BankAccount() {
@@ -23,7 +21,7 @@ public class BankAccount {
     return name;
   }
 
-  public String getBalance() {
+  public float getBalance() {
     return balance;
   }
 
@@ -35,7 +33,14 @@ public class BankAccount {
     this.name = name;
   }
 
-  public void setBalance(String balance) {
+  public void setBalance(float balance) {
     this.balance = balance;
+  }
+
+  @Override
+  public String toString() {
+    return "name='" + name + '\'' + ", balance='" + String.format("%.02f", balance) + " " + currency
+            +'\'' + ", " +
+            "animalType='" + animalType + '\'';
   }
 }
