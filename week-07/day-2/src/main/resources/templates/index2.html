@@ -6,6 +6,6 @@
     <meta charset="utf-8" />
 </head>
 <body>
-<p th:each="account : ${accounts}" th:text="${account}"/>
+<p th:each="account : ${accounts}" th:text="${account.getId()} + '. ' + ${account.getName()} + ' ' + ${account.balanceWith2Decimals()} + ' ' + ${account.getCurrency()} + ' ' + ${account.getAnimalType()}"}/>
 </body>
 </html>

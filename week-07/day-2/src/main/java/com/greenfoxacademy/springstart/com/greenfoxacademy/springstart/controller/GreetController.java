@@ -13,6 +13,6 @@ public class GreetController {
     BankAccount newBank = new BankAccount();
     model.addAttribute("html", "<em>HTML</em>");
     model.addAttribute("enjoy", "<b>Enjoy yourself!</b>");
-    return "index";
+    return "index2";
   }
 }
