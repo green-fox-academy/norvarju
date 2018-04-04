@@ -18,7 +18,7 @@ public class ListController {
     BankAccount account2 = new BankAccount("Mufasa", 500, "lion", true);
     BankAccount account3 = new BankAccount("Timon", 200, "meerkats", false);
     BankAccount account4 = new BankAccount("Bumba", 100, "warthog", false);
-    BankAccount account5 = new BankAccount("Mufasa", 1500, "lion", false);
+    BankAccount account5 = new BankAccount("Zordon", 1500, "lion", false);
     BankAccount account6 = new BankAccount("Rafiki", 800, "ape", false);
     List<BankAccount> bank = new ArrayList<>();
     bank.add(account1);

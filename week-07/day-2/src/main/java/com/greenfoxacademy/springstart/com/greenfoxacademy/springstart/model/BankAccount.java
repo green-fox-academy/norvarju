@@ -76,7 +76,7 @@ public class BankAccount {
     if(isKing){
       return "Yay, he is king";
     } else {
-      return "Sadly he is not king.";
+      return "Sadly he is not king";
     }
   }
 
