@@ -39,8 +39,8 @@ public class BankAccount {
 
   @Override
   public String toString() {
-    return "name='" + name + '\'' + ", balance='" + String.format("%.02f", balance) + " " + currency
-            +'\'' + ", " +
-            "animalType='" + animalType + '\'';
+    return "name: " + name + ", balance: " + String.format("%.02f", balance) + " " + currency
+            + ", " +
+            "animalType: " + animalType;
   }
 }
