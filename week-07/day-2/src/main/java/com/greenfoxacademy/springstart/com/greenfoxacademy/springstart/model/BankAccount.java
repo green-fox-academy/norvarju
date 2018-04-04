@@ -80,6 +80,11 @@ public class BankAccount {
     }
   }
 
+  public float incrementing(){
+    setBalance(getBalance()+10);
+    return getBalance();
+  }
+
   /*@Override
   public String toString() {
     return "name: " + name + ", balance: " + String.format("%.02f", balance) + " " + currency

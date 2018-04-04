@@ -14,7 +14,8 @@
         <td th:text="${account.getCurrency()}"/>
         <td th:text="${account.getAnimalType()}"/>
         <td th:text="${account.kingIndicator()}"/>
-        <td th:text="${account.getName()} != 'Zordon' ? 'Good guy' : 'Bad guy'"/>
+        <td th:text="${account.kingIndicator()}"/>
+        <td><input type="button" value="Increase balance"></td>
     </tr>
 </table>
 </body>
