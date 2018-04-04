@@ -1,22 +1,29 @@
 package com.greenfoxacademy.springstart.com.greenfoxacademy.springstart.model;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 public class BankAccount {
 
   private String name;
-  private int balance;
+  private String balance;
   private String animalType;
+  private NumberFormat formatter;
 
-  public BankAccount(String name, int balance, String animalType) {
+  public BankAccount(String name, String balance, String animalType) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
+  }
+
+  public BankAccount() {
   }
 
   public String getName() {
     return name;
   }
 
-  public int getBalance() {
+  public String getBalance() {
     return balance;
   }
 
@@ -28,11 +35,7 @@ public class BankAccount {
     this.name = name;
   }
 
-  public void setBalance(int balance) {
+  public void setBalance(String balance) {
     this.balance = balance;
-  }
-
-  public void setAnimalType(String animalType) {
-    this.animalType = animalType;
   }
 }

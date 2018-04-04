@@ -9,7 +9,8 @@ public class ShowController {
 
   @RequestMapping("/show")
   public BankAccount show(){
-    BankAccount newBank = new BankAccount("Simba", 2000, "lion");
+    BankAccount newBank = new BankAccount("Simba", "2000", "lion");
     return newBank;
+
   }
 }
