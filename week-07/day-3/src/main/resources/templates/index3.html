@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<p th:text="${validityChecker} ? ${address} + ' is a valid email address' : ${address} + ' is not a valid email address'" th:style="${validityChecker} ? 'color:#22FF00' : 'color:#FF1700'"></p>
+</body>
+</html>
