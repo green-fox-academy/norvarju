@@ -27,4 +27,20 @@ public class UtilityService {
   public boolean validateEmail(String emailAddress){
     return emailAddress.contains("@") && emailAddress.contains(".");
   }
+
+  public String caesarEncode(String text, int number) {
+    String result = "";
+    for(int i = 0; i < text.length(); i++) {
+      result += (char)((int)text.charAt(i) + number);
+    }
+    return result;
+  }
+
+  public String caesarDecode(String text, int number) {
+    String result = "";
+    for(int i = 0; i < text.length(); i++) {
+      result += (char)((int)text.charAt(i) - number);
+    }
+    return result;
+  }
 }
