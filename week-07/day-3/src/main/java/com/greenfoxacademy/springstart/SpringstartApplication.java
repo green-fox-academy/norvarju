@@ -11,6 +11,9 @@ public class SpringstartApplication implements CommandLineRunner{
 	@Autowired
 	HelloBeanWorld helloBeanWorld;
 
+	@Autowired
+	MyColor myColor;
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringstartApplication.class, args);
 	}
@@ -18,5 +21,6 @@ public class SpringstartApplication implements CommandLineRunner{
 	@Override
 	public void run(String[] args) throws Exception {
 		System.out.println(helloBeanWorld.log("hello"));
+		System.out.println(myColor.printColor());
 	}
 }
