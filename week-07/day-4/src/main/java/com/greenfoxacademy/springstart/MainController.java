@@ -34,8 +34,11 @@ public class MainController {
 
   @PostMapping("/login")
   public String login(@RequestParam(name = "username") String username, Model model) {
-    if (userDB.)
-    return "redirect:/?name=" + username;
+    if (userDB.findUser(username) != null) {
+      return "redirect:/?name=" + username;
+    } else {
+      return "loginFailure";
+    }
   }
 
   @GetMapping("/{username}")
