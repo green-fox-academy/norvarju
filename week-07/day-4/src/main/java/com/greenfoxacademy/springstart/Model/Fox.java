@@ -2,6 +2,7 @@ package com.greenfoxacademy.springstart.Model;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -15,9 +16,9 @@ public class Fox {
   public Fox() {
   }
 
-  public Fox(String name, List<String> listOfString, String food, String drink) {
+  public Fox(String name, String food, String drink) {
     this.name = name;
-    this.listOfString = listOfString;
+    listOfString = new ArrayList<>();
     this.food = food;
     this.drink = drink;
   }

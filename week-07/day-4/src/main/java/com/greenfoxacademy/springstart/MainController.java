@@ -29,6 +29,10 @@ public class MainController {
 
   @GetMapping("/{username}")
   public String ShowProfile(@PathVariable(name = "username") String username, Model model) {
+    model.addAttribute("name", fox.getName());
+    model.addAttribute("numberOfTricks", fox.getListOfString().size());
+    model.addAttribute("food", fox.getFood());
+    model.addAttribute("drink", fox.getDrink());
     return "index";
   }
 
