@@ -1,10 +1,16 @@
 package com.greenfoxacademy.springstart.Model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
 
   private String userName;
   private int age;
   private String residency;
+
+  public User() {
+  }
 
   public User(String userName, int age, String residency) {
     this.userName = userName;

@@ -1,16 +1,26 @@
 package com.greenfoxacademy.springstart;
 
+import com.greenfoxacademy.springstart.Database.UserDB;
 import com.greenfoxacademy.springstart.Model.Fox;
+import com.greenfoxacademy.springstart.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import javax.jws.soap.SOAPBinding;
 
 @Controller
 public class MainController {
 
   @Autowired
   Fox fox;
+
+  @Autowired
+  User user;
+
+  @Autowired
+  UserDB userDB;
 
   /*@GetMapping("/")
   public String mainPage() {
@@ -24,6 +34,7 @@ public class MainController {
 
   @PostMapping("/login")
   public String login(@RequestParam(name = "username") String username, Model model) {
+    if (userDB.)
     return "redirect:/?name=" + username;
   }
 
