@@ -14,8 +14,13 @@ public class MainController {
   @Autowired
   Fox fox;
 
+  @GetMapping("/")
+  public String mainPage() {
+    return "index";
+  }
+
   @GetMapping("/login")
-  public String login(){
+  public String login() {
     return "login";
   }
 
