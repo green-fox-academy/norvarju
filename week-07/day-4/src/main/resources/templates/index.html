@@ -9,5 +9,9 @@
 <h1 th:text="'Hello, ' + ${username}"></h1>
 <p th:text="'This is ' + ${name} + '. Currently living on ' + ${food} + ' and ' + ${drink} + '. He knows ' + ${numberOfTricks} + ' trick(s)' "></p>
 <img src="/greenfox.png"/>
+<h1>Known tricks</h1>
+<ul th:each="tricks : ${listOfTricks}">
+    <li th:text="${tricks}"></li>
+</ul>
 </body>
 </html>

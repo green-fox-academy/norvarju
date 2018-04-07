@@ -57,6 +57,7 @@ public class MainController {
     model.addAttribute("food", fox.getFood());
     model.addAttribute("drink", fox.getDrink());
     model.addAttribute("username", user.getUserName());
+    model.addAttribute("listOfTricks", fox.getListOfTricks());
     return "index";
   }
 
