@@ -1,5 +1,6 @@
 package com.greenfoxacademy.springstart;
 
+import com.greenfoxacademy.springstart.Database.FoxDB;
 import com.greenfoxacademy.springstart.Database.UserDB;
 import com.greenfoxacademy.springstart.Model.Fox;
 import com.greenfoxacademy.springstart.Model.User;
@@ -22,6 +23,9 @@ public class MainController {
   @Autowired
   UserDB userDB;
 
+  @Autowired
+  FoxDB foxDB;
+
   /*@GetMapping("/")
   public String mainPage() {
     return "index";
@@ -33,7 +37,7 @@ public class MainController {
   }
 
   @PostMapping("/login")
-  public String login(@RequestParam(name = "username") String username, Model model) {
+  public String login(@ModelAttribute(name = "username") String username, Model model) {
     if (userDB.findUser(username) != null) {
       return "redirect:/?name=" + username;
     } else {
@@ -41,12 +45,16 @@ public class MainController {
     }
   }
 
-  @GetMapping("/{username}")
-  public String ShowProfile(@PathVariable(name = "username") String username, Model model) {
-    model.addAttribute("name", fox.getName());
-    model.addAttribute("numberOfTricks", fox.getListOfString().size());
-    model.addAttribute("food", fox.getFood());
-    model.addAttribute("drink", fox.getDrink());
+  @GetMapping("/")
+  public String showProfile(@RequestParam(name = "name", required = false) String username,
+                            Model model) {
+
+    model.addAttribute("name", foxDB.findFox(userDB.findUser(username).getMyFox()).getName());
+    model.addAttribute("numberOfTricks", foxDB.findFox(userDB.findUser(username).getMyFox())
+            .getListOfString().size());
+    model.addAttribute("food", foxDB.findFox(userDB.findUser(username).getMyFox()).getFood());
+    model.addAttribute("drink", foxDB.findFox(userDB.findUser(username).getMyFox()).getDrink());
+    model.addAttribute("username", userDB.findUser(username).getUserName());
     return "index";
   }
 
