@@ -7,11 +7,12 @@
 </head>
 <body>
 <h1 th:text="'Hello, ' + ${username}"></h1>
-<p th:text="'This is ' + ${name} + '. Currently living on ' + ${food} + ' and ' + ${drink} + '. He knows ' + ${numberOfTricks} + ' trick(s)' "></p>
+<p th:text="'This is ' + ${name} + '. Currently living on ' + ${food} + ' and ' + ${drink} + '. He knows ' + ${numberOfTricks} + ' trick(s).' "></p>
 <img src="/greenfox.png"/>
 <h1>Known tricks</h1>
-<ul th:each="tricks : ${listOfTricks}">
+<ul th:if="${listOfTricks.size()} != 0" th:each="tricks : ${listOfTricks}">
     <li th:text="${tricks}"></li>
 </ul>
+<hi th:if="${listOfTricks.size()} == 0" th:text="'You know no tricks yet. Go and learn some.'"></hi>
 </body>
 </html>

@@ -15,8 +15,8 @@ public class FoxDB {
 
   public FoxDB() {
     foxDB = new ArrayList<>(Arrays.asList(
-            new Fox("Jerry", "hotdog", "beer", Arrays.asList("farts",
-                    "burps")),
+            new Fox("Jerry", "hotdog", "beer", Arrays.asList(/*"farts",
+                    "burps"*/)),
             new Fox("Mungo", "pizza", "coke", Arrays.asList("does ballet dancing", "sings " +
                     "opera aria", "knows every capital city by heart")),
             new Fox("Patrick", "pie", "ice tea", Arrays.asList("giggles when tickling", "does " +
