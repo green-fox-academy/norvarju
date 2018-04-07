@@ -49,12 +49,14 @@ public class MainController {
   public String showProfile(@RequestParam(name = "name", required = false) String username,
                             Model model) {
 
-    model.addAttribute("name", foxDB.findFox(userDB.findUser(username).getMyFox()).getName());
-    model.addAttribute("numberOfTricks", foxDB.findFox(userDB.findUser(username).getMyFox())
-            .getListOfString().size());
-    model.addAttribute("food", foxDB.findFox(userDB.findUser(username).getMyFox()).getFood());
-    model.addAttribute("drink", foxDB.findFox(userDB.findUser(username).getMyFox()).getDrink());
-    model.addAttribute("username", userDB.findUser(username).getUserName());
+    User user = userDB.findUser(username);
+    Fox fox = foxDB.findFox(user.getMyFox());
+
+    model.addAttribute("name", fox.getName());
+    model.addAttribute("numberOfTricks", fox.getListOfTricks().size());
+    model.addAttribute("food", fox.getFood());
+    model.addAttribute("drink", fox.getDrink());
+    model.addAttribute("username", user.getUserName());
     return "index";
   }
 

@@ -9,7 +9,7 @@ import java.util.List;
 public class Fox {
 
   private String name;
-  private List<String> listOfString;
+  private List<String> listOfTricks;
   private String food;
   private String drink;
 
@@ -18,7 +18,7 @@ public class Fox {
 
   public Fox(String name, String food, String drink) {
     this.name = name;
-    listOfString = new ArrayList<>();
+    listOfTricks = new ArrayList<>();
     this.food = food;
     this.drink = drink;
   }
@@ -27,8 +27,8 @@ public class Fox {
     return name;
   }
 
-  public List<String> getListOfString() {
-    return listOfString;
+  public List<String> getListOfTricks() {
+    return listOfTricks;
   }
 
   public String getFood() {
@@ -43,8 +43,8 @@ public class Fox {
     this.name = name;
   }
 
-  public void setListOfString(List<String> listOfString) {
-    this.listOfString = listOfString;
+  public void setListOfTricks(List<String> listOfTricks) {
+    this.listOfTricks = listOfTricks;
   }
 
   public void setFood(String food) {
