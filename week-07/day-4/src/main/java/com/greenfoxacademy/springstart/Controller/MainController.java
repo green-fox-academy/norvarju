@@ -1,10 +1,11 @@
-package com.greenfoxacademy.springstart;
+package com.greenfoxacademy.springstart.Controller;
 
 import com.greenfoxacademy.springstart.Database.FoxDB;
 import com.greenfoxacademy.springstart.Database.UserDB;
 import com.greenfoxacademy.springstart.Model.Fox;
 import com.greenfoxacademy.springstart.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.jws.soap.SOAPBinding;
 
 @Controller
+@Component
 public class MainController {
 
   @Autowired

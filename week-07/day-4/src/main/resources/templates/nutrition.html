@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<form action="#" th:action="@{/nutrition}" method="post">
+    <label for="food">Food</label>
+    <input type="text" id="food" name="food"/>
+    <label for="drink">Drink</label>
+    <input type="text" id="drink" name="drink"/>
+    <input type="submit" value="CHANGE"/>
+</form>
+</body>
+</html>
