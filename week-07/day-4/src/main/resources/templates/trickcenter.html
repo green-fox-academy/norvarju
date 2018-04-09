@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1 th:object="${user}" th:text="'Hello, ' + ${user.getUserName()} + '!'"></h1>
+<form action="#" th:action="'/trickcenter?name=' + ${user.getUserName()}" th:object="${fox}" method="post">
+    <label for="tricks">Tricks</label>
+    <input type="text" id="tricks" name="tricks" />
+    <input type="submit" value="LEARN"/>
+</form>
+</body>
+</html>

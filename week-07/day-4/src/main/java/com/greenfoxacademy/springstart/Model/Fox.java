@@ -55,4 +55,12 @@ public class Fox {
   public void setDrink(String drink) {
     this.drink = drink;
   }
+
+  public void addTrick(String trick) {
+    listOfTricks.add(trick);
+  }
+
+  public boolean isTrickLearntYet(String newTrick) {
+    return listOfTricks.contains(newTrick);
+  }
 }
