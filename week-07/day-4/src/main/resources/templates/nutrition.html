@@ -9,9 +9,9 @@
 <h1 th:object="${user}" th:text="'Hello, ' + ${user.getUserName()} + '!'"></h1>
 <form action="#" th:action="'/nutrition?name=' + ${user.getUserName()}" th:object="${fox}" method="post">
     <label for="food">Food</label>
-    <input type="text" id="food" name="food"/>
+    <input type="text" id="food" name="food" th:placeholder="${fox.getFood()}"/>
     <label for="drink">Drink</label>
-    <input type="text" id="drink" name="drink" />
+    <input type="text" id="drink" name="drink" th:placeholder="${fox.getDrink()}"/>
     <input type="submit" value="CHANGE"/>
 </form>
 </body>
