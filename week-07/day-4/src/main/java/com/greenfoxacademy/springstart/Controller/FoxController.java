@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class FoxController {
 
@@ -21,27 +23,29 @@ public class FoxController {
   @Autowired
   MainController mainController;
 
-  @GetMapping("/{nutrition}")
-  public String changeFood(@PathVariable(name = "nutrition") String nutrition) {
+  @GetMapping("/nutrition")
+  public String changeFood(@RequestParam(name = "name", required =false) String username, Model
+          model) {
+    model.addAttribute("user", userDB.findUser(username));
+    model.addAttribute("fox", foxDB.findFox(userDB.findUser(username).getMyFox()));
     return "nutrition";
   }
 
-  @PostMapping("/{nutrition}")
-  public String changeFood(@PathVariable(name = "nutrition") String nutrition,
-                           @RequestParam(name = "name", required = false) String username,
+  @PostMapping("/nutrition")
+  public String changeFood(@RequestParam(name = "name", required = false) String username,
                            @ModelAttribute(name = "drink") String drink,
                            @ModelAttribute(name = "food") String food,
                            Model model) {
-    User user = userDB.findUser(username);
-    /*Fox fox = foxDB.findFox(user.getMyFox());
+    model.addAttribute("user", userDB.findUser(username));
+    Fox fox = foxDB.findFox(userDB.findUser(username).getMyFox());
 
     if(drink != null) {
       fox.setDrink(drink);
     }
     if(food != null) {
       fox.setFood(food);
-    }*/
-    return "redirect:/nutrition?name=" + username;
+    }
+    return "redirect:/?name=" + username;
   }
 
 }
