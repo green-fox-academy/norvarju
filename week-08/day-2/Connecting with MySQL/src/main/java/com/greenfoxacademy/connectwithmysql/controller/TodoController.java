@@ -18,13 +18,25 @@ public class TodoController {
   Todo todo;
 
   @GetMapping(value={"/", "/list"})
-  public String list(@RequestParam(name="isActive") boolean isActive, Model model) {
-    if(isActive == true) {
+  public String list(@RequestParam(name="isActive", required = false) boolean isActive, Model
+          model) {
+    if(isActive != true) {
       model.addAttribute("todos", todoRepository.findByDoneIsFalse());
-    } else if(isActive == false) {
+    } else if(isActive != false) {
       model.addAttribute("todos", todoRepository.findByDoneIsTrue());
     }
     return "todolist";
+  }
+
+  @GetMapping(value="/add")
+  public String addTask() {
+    return "addtask";
+  }
+
+  @PostMapping(value="/add")
+  public String postTask(@ModelAttribute(name="task") String task) {
+    todoRepository.save(new Todo(task));
+    return "redirect:/todo/list";
   }
 
 }
