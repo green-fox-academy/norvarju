@@ -1,8 +1,11 @@
 package com.greenfoxacademy.connectwithmysql.model;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 
 @Entity
+@Component
 public class Todo {
 
   @Id
