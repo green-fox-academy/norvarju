@@ -21,5 +21,6 @@ public class ListingtodosApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		todoRepository.save(new Todo("Go home"));
 		todoRepository.save(new Todo("Relax"));
+		todoRepository.save(new Todo("I have to learn Object Relational Mapping"));
 	}
 }
