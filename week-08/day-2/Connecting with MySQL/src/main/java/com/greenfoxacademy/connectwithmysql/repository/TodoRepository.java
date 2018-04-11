@@ -9,4 +9,5 @@ public interface TodoRepository extends CrudRepository<Todo, Long> {
 
   List<Todo> findByDoneIsTrue();
   List<Todo> findByDoneIsFalse();
+  List<Todo> findTodoByIdEquals(long id);
 }
