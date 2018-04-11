@@ -13,12 +13,12 @@
         </br>
         <table class="table table-striped">
             <tr class="headline text-center">
-                <td>ID</td>
-                <td>ACTION</td>
-                <td>URGENT</td>
-                <td>DONE</td>
-                <td>DELETE</td>
-                <td>EDIT</td>
+                <td><strong>ID</strong></td>
+                <td><strong>ACTION</strong></td>
+                <td><strong>URGENT</strong></td>
+                <td><strong>DONE</strong></td>
+                <td><strong>DELETE</strong></td>
+                <td><strong>EDIT</strong></td>
             </tr>
             <tr th:each="todo : ${todos}" class="text-center">
                 <td th:text="${todo.getId()}"></td>
