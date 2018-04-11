@@ -16,7 +16,7 @@
     <input type="checkbox" th:field="${todo.urgent}" th:checked="${todo.urgent}"/>Urgent
     <input type="checkbox" th:field="${todo.done}" th:checked="${todo.done}"/>Done</br></br>
     <input type="submit" class="btn btn-default" value="Submit"/></br></br>
-    <a type="button" class="btn btn-xs btn-warning" href="'/todo/list'">Cancel</a>
+    <a type="button" class="btn btn-xs btn-warning" th:href="'/todo/list'">Cancel</a>
 </form>
 <div class="col-md-4"></div>
 <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
