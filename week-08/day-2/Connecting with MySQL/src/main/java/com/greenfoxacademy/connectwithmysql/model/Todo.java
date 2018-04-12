@@ -3,6 +3,8 @@ package com.greenfoxacademy.connectwithmysql.model;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Component
@@ -15,11 +17,15 @@ public class Todo {
   private boolean urgent;
   private boolean done;
 
+  @ManyToOne
+  private Assignee assignee;
+
   public Todo(String title) {
     this.id = id;
     this.title = title;
     this.urgent = false;
     this.done = false;
+    this.assignee = assignee;
   }
 
   public Todo() {

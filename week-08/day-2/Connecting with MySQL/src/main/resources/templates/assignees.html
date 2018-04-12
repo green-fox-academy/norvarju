@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignees</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<h1 class="text-center">List of assignees</h1>
+<table class="table table-striped">
+    <tr class="headline text-center">
+        <td><strong>ID</strong></td>
+        <td><strong>Name</strong></td>
+        <td><strong>E-MAIL</strong></td>
+        <td><strong>DELETE</strong></td>
+        <td><strong>EDIT</strong></td>
+    </tr>
+    <tr th:each="assignee : ${assignees}" class="text-center">
+        <td th:text="${assignee.getId()}"></td>
+        <td th:text="${assignee.getName()}"></td>
+        <td th:text="${assignee.getEmail()}"></td>
+        <td><a type="button" class="btn btn-xs btn-danger" th:href="'/todo/' + ${assignee.getId()} + '/delete'">Delete</a></td>
+        <td><a type="button" class="btn btn-xs btn-primary" th:href="'/todo/' + ${assignee.getId()} + '/edit'">Edit</a></td>
+    </tr>
+</table>
+</body>
+</html>
