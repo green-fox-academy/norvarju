@@ -33,9 +33,9 @@ public class AssigneeController {
     return "redirect:/todo/assignee";
   }
 
-  /*@GetMapping(value="/{id}/delete")
+  @GetMapping(value="/{id}/deleteassignee")
   public String delete(@PathVariable(name="id") long id) {
-    todoRepository.deleteById(id);
-    return "redirect:/todo/list";
-  }*/
+    assigneeRepository.deleteById(id);
+    return "redirect:/todo/assignee";
+  }
 }

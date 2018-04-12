@@ -21,7 +21,7 @@
         <td th:text="${assignee.getId()}"></td>
         <td th:text="${assignee.getName()}"></td>
         <td th:text="${assignee.getEmail()}"></td>
-        <td><a type="button" class="btn btn-xs btn-danger" th:href="'/todo/' + ${assignee.getId()} + '/delete'">Delete</a></td>
+        <td><a type="button" class="btn btn-xs btn-danger" th:href="'/todo/' + ${assignee.getId()} + '/deleteassignee'">Delete</a></td>
         <td><a type="button" class="btn btn-xs btn-primary" th:href="'/todo/' + ${assignee.getId()} + '/edit'">Edit</a></td>
     </tr>
 </table>
