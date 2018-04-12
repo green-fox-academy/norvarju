@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-<h1 class="text-center">List of assignees</h1>
+<h1 class="text-center text-uppercase">List of assignees</h1>
+<div class="container">
 <table class="table table-striped">
     <tr class="headline text-center">
         <td><strong>ID</strong></td>
@@ -24,5 +25,8 @@
         <td><a type="button" class="btn btn-xs btn-primary" th:href="'/todo/' + ${assignee.getId()} + '/edit'">Edit</a></td>
     </tr>
 </table>
+</div>
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
 </html>
