@@ -30,6 +30,16 @@ public class TodoController {
     return "todolist";
   }
 
+  @PostMapping(value={"/", "/list"})
+  public String filteredList(@ModelAttribute(name="search") String search, Model model) {
+    if(search != null) {
+      model.addAttribute("todos", todoRepository.findAllByTitleContainingIgnoreCase(search));
+      return "todolist";
+    } else {
+      return "error";
+    }
+  }
+
   @GetMapping(value="/add")
   public String addTask() {
     return "addtask";
