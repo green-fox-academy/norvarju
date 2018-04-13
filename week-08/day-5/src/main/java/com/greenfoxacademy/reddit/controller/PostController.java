@@ -44,5 +44,20 @@ public class PostController {
     return "redirect:/reddit";
   }
 
+  @GetMapping("/reddit/submit")
+  public String submit() {
+    return "submit";
+  }
+
+  @PostMapping("/reddit/submit")
+  public String listAfterSubmit(@ModelAttribute(name="title") String title, @ModelAttribute
+          (name="url") String url) {
+    postRepository.save(new Post(title));
+    Post post = postRepository.findByTitle(title);
+    post.setLink(url);
+    postRepository.save(post);
+    return "redirect:/reddit";
+  }
+
 
 }
