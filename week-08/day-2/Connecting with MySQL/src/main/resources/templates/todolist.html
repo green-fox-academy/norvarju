@@ -14,9 +14,10 @@
         <form class="text-center col-md-4" action="#" th:action="'/todo/'" method="post">
             <label for="search">Search task</label>
             <input type="text" class="form-control" id="search" name="search"/></br>
+            <input type="submit" value="Search" class="btn btn-primary"/></br>
         </form>
         <div class="col-md-4"></div>
-        </div>
+        </div></br>
         <div class="text-center"><a th:href="'/todo/add'" type="button" class="btn btn-warning">Add new todo</a></div>
         </br>
         <table class="table table-striped">
@@ -37,6 +38,9 @@
                 <td><a type="button" class="btn btn-xs btn-primary" th:href="'/todo/' + ${todo.getId()} + '/edit'">Edit</a></td>
             </tr>
         </table>
+        <div class="text-center text-uppercase">
+        <a href="/todo/assignee">List of assignees</a>
+        </div>
     </div>
 <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
