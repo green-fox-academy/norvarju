@@ -1,6 +1,7 @@
 package com.greenfoxacademy.connectwithmysql.controller;
 
 import com.greenfoxacademy.connectwithmysql.model.Todo;
+import com.greenfoxacademy.connectwithmysql.repository.AssigneeRepository;
 import com.greenfoxacademy.connectwithmysql.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,9 @@ public class TodoController {
 
   @Autowired
   Todo todo;
+
+  @Autowired
+  AssigneeRepository assigneeRepository;
 
   @GetMapping(value={"/", "/list"})
   public String list(@RequestParam(name="isActive", required = false) String isActive, Model
@@ -60,6 +64,7 @@ public class TodoController {
   @GetMapping(value="/{id}/edit")
   public String editTodoList(@PathVariable(name="id") long id, Model model) {
     model.addAttribute("todo", todoRepository.findById(id).get());
+    model.addAttribute("assignees", assigneeRepository.findAll());
     return "editlist";
   }
 

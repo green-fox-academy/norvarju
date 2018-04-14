@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="utf-8" />
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center text-uppercase" th:text="'Todos of ' + ${assignee.getName()}"></h1>
+    <table class="table table-striped">
+        <tr class="headline text-center">
+            <td><strong>ID</strong></td>
+            <td><strong>ACTION</strong></td>
+            <td><strong>URGENT</strong></td>
+            <td><strong>DONE</strong></td>
+        </tr>
+        <tr th:each="todo : ${assignee.getTodoList()}" class="text-center">
+            <td th:text="${todo.getId()}"></td>
+            <td th:text="${todo.getTitle()}"></td>
+            <td><span th:class="${todo.isUrgent()} ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'"></span></td>
+            <td><span th:class="${todo.isDone()} ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'"></span></td>
+        </tr>
+    </table>
+</div>
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -18,6 +18,7 @@ public class Todo {
   private boolean done;
 
   @ManyToOne
+  @JoinColumn(name="assignee_id")
   private Assignee assignee;
 
   public Todo(String title) {
@@ -43,6 +44,10 @@ public class Todo {
     return title;
   }
 
+  public Assignee getAssignee() {
+    return assignee;
+  }
+
   public void setTitle(String title) {
     this.title = title;
   }
@@ -61,6 +66,10 @@ public class Todo {
 
   public void setDone(boolean done) {
     this.done = done;
+  }
+
+  public void setAssignee(Assignee assignee) {
+    this.assignee = assignee;
   }
 
   @Override

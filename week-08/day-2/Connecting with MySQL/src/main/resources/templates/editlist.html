@@ -13,6 +13,10 @@
 <form action="#" class="text-center col-md-4" th:action="@{'/todo/' + ${todo.id} + '/edit'}" th:object="${todo}" method="post">
     <label for="task">Todo description</label>
     <input type="text" class="form-control" id="task" th:field="${todo.title}"/></br>
+    <label for="assignee">Assignee</label>
+    <select id="assignee" th:field="${todo.assignee}"/>
+        <option th:each="assignee : ${assignees}" th:text="${assignee.getName()}" th:value="${assignee.getId()}"></option>
+    </select></br>
     <input type="checkbox" th:field="${todo.urgent}" th:checked="${todo.urgent}"/>Urgent
     <input type="checkbox" th:field="${todo.done}" th:checked="${todo.done}"/>Done</br></br>
     <input type="submit" class="btn btn-default" value="Submit"/></br></br>

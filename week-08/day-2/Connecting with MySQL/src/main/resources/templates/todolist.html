@@ -28,6 +28,7 @@
                 <td><strong>DONE</strong></td>
                 <td><strong>DELETE</strong></td>
                 <td><strong>EDIT</strong></td>
+                <td><strong>ASSIGNEE</strong></td>
             </tr>
             <tr th:each="todo : ${todos}" class="text-center">
                 <td th:text="${todo.getId()}"></td>
@@ -36,6 +37,7 @@
                 <td><span th:class="${todo.isDone()} ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'"></span></td>
                 <td><a type="button" class="btn btn-xs btn-danger" th:href="'/todo/' + ${todo.getId()} + '/delete'">Delete</a></td>
                 <td><a type="button" class="btn btn-xs btn-primary" th:href="'/todo/' + ${todo.getId()} + '/edit'">Edit</a></td>
+                <td th:text="${todo.getAssignee()}"></td>
             </tr>
         </table>
         <div class="text-center text-uppercase">

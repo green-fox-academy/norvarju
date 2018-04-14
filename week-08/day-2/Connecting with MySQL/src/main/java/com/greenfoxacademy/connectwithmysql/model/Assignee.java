@@ -17,7 +17,7 @@ public class Assignee {
   private String name;
   private String email;
 
-  @OneToMany
+  @OneToMany(mappedBy = "assignee")
   private List<Todo> todoList;
 
   public Assignee(String name, String email) {
@@ -59,5 +59,10 @@ public class Assignee {
 
   public void setTodoList(List<Todo> todoList) {
     this.todoList = todoList;
+  }
+
+  @Override
+  public String toString() {
+    return name;
   }
 }
