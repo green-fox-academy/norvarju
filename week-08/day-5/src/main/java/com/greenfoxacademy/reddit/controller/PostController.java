@@ -2,6 +2,7 @@ package com.greenfoxacademy.reddit.controller;
 
 import com.greenfoxacademy.reddit.model.Post;
 import com.greenfoxacademy.reddit.repository.PostRepository;
+import com.greenfoxacademy.reddit.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,15 +22,18 @@ public class PostController {
   @Autowired
   PostRepository postRepository;
 
+  @Autowired
+  PostService postService;
+
   @GetMapping("/reddit")
   public String showPosts(Model model) {
-    model.addAttribute("posts", postRepository.findAll());
+    model.addAttribute("posts", postRepository.findAllByOrderByRatingDescTitleAsc());
     return "reddit";
   }
 
 
   @GetMapping("/reddit/{id}/upvote")
-  public String upvote(@PathVariable(name="id") long id, Model model) {
+  public String upvote(@PathVariable(name="id") long id) {
     Post post = postRepository.findById(id).get();
     post.setRating(post.getRating() + 1);
     postRepository.save(post);
@@ -37,7 +41,7 @@ public class PostController {
   }
 
   @GetMapping("/reddit/{id}/downvote")
-  public String downvote(@PathVariable(name="id") long id, Model model) {
+  public String downvote(@PathVariable(name="id") long id) {
     Post post = postRepository.findById(id).get();
     post.setRating(post.getRating() - 1);
     postRepository.save(post);
@@ -52,12 +56,11 @@ public class PostController {
   @PostMapping("/reddit/submit")
   public String listAfterSubmit(@ModelAttribute(name="title") String title, @ModelAttribute
           (name="url") String url) {
-    postRepository.save(new Post(title));
+    postRepository.save(new Post(title, url));
     Post post = postRepository.findByTitle(title);
-    post.setLink(url);
-    postRepository.save(post);
     return "redirect:/reddit";
   }
+
 
 
 }

@@ -19,7 +19,5 @@ public class RedditApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		postRepository.save(new Post("It works as we intended"));
-		postRepository.save(new Post("Polish history in one picture"));
 	}
 }

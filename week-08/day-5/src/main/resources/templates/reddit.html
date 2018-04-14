@@ -18,12 +18,14 @@
         <td class="text-uppercase"><strong>upvote</strong></td>
         <td class="text-uppercase"><strong>downvote</strong></td>
         <td class="text-uppercase"><strong>description</strong></td>
+        <td class="text-uppercase"><strong>date</strong></td>
         </tr>
             <tr th:each="post : ${posts}" class="text-center">
                 <td th:text="${post.getRating()}"></td>
                 <td><a th:href="'/reddit/' + ${post.getId()} + '/upvote'" type="button" class="btn btn-xs btn-primary" value="+"/>+</td>
                 <td><a th:href="'/reddit/' + ${post.getId()} + '/downvote'" type="button" class="btn btn-xs btn-primary" value="-"/>-</td>
                 <td><a th:href="'http://' + ${post.getLink()}" th:text="${post.getTitle()}"></a></td>
+                <td th:text="${post.getCreatedAt()}"></td>
             </tr>
     </table>
 </div>

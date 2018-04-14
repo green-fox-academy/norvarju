@@ -3,6 +3,7 @@ package com.greenfoxacademy.reddit.model;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Component
 @Entity
@@ -16,7 +17,10 @@ public class Post {
   private String title;
   private String link;
 
-  public Post(String title) {
+  @Temporal(TemporalType.TIMESTAMP)
+  private Date createdAt = new Date();
+
+  public Post(String title, String link) {
     this.id = id;
     this.rating = rating;
     this.title = title;
@@ -46,6 +50,10 @@ public class Post {
     return link;
   }
 
+  public Date getCreatedAt() {
+    return createdAt;
+  }
+
   public void setRating(int rating) {
     this.rating = rating;
   }
@@ -56,5 +64,9 @@ public class Post {
 
   public void setLink(String link) {
     this.link = link;
+  }
+
+  public void setCreatedAt(Date createdAt) {
+    this.createdAt = createdAt;
   }
 }
