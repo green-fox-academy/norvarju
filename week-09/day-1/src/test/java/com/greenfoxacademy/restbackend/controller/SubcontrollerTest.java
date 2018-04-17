@@ -78,4 +78,11 @@ public class SubcontrollerTest {
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.error").value("Please provide a title!"));
   }
+
+  @Test
+  public void AppendTest() throws Exception {
+    mockMvc.perform(get("/appenda/kuty"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.appended").value("kutya"));
+  }
 }
