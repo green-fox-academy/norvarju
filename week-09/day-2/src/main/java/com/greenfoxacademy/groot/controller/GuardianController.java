@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class GuardianController {
 
   @GetMapping("/groot")
-  public Object translateGroot(@RequestParam(name = "message") String message, @RequestBody
+  public Object translateGroot(@RequestParam(name = "message", required = false) String message,
+                               @RequestBody
           (required = false) Guardian guardian) {
     if (message == null) {
       return new GrootError();

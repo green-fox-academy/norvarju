@@ -9,6 +9,7 @@ public class GrootError {
   }
 
   public GrootError() {
+    error = "I am Groot!";
   }
 
   public String getError() {
