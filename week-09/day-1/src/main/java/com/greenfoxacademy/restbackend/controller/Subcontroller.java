@@ -1,10 +1,8 @@
 package com.greenfoxacademy.restbackend.controller;
 
 import com.greenfoxacademy.restbackend.model.*;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class Subcontroller {
@@ -35,5 +33,18 @@ public class Subcontroller {
   public Object getAppended(@PathVariable(name = "appendable", required = false) String
                                       appendable) {
     return new Appended(appendable);
+  }
+
+  @PostMapping("/dountil/{what}")
+  public Object getNumbersUntil(@PathVariable(name = "what") String what, @RequestBody Until
+          until) {
+    if(until == null) {
+      return new FailUntil();
+    } else if(what.equals("sum")) {
+      until.sum();
+    } else if(what.equals("factor")) {
+      until.factor();
+    }
+    return until;
   }
 }
