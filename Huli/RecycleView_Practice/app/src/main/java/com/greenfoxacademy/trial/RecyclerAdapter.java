@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import java.util.List;
 import java.util.ArrayList;
 
+
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>{
 
     private List<Result> resultList;
@@ -59,3 +60,5 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
         }
     }
 }
+
+

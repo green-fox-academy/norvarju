@@ -2,7 +2,9 @@ package com.greenfoxacademy.searchbook.actions;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.greenfoxacademy.searchbook.R;
@@ -14,6 +16,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import android.view.View;
+import android.content.Intent;
 
 public class SearchByAuthor extends AppCompatActivity {
 
@@ -21,27 +25,17 @@ public class SearchByAuthor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seach_by_author);
+    }
 
-        Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("https://api.chucknorris.io/")
-                .addConverterFactory(GsonConverterFactory.create());
+    public void onClickToAuthorSearchResult(View view) {
 
-        Retrofit retrofit = builder.build();
+        Intent i = new Intent(this, AuthorResult.class);
 
-        SubjectSearcher searcher = retrofit.create(SubjectSearcher.class);
-        Call<Books> call = searcher.booksBySubject();
+        EditText editText = (EditText) findViewById(R.id.authorname);
+        String author = editText.getText().toString();
 
-        call.enqueue(new Callback<Books>() {
-            @Override
-            public void onResponse(Call<Books> call, Response<Books> response) {
-                Books books = response.body();
-                TextView textView = findViewById(R.id.textView2);
-                textView.setText(books.getValue());
-            }
+        i.putExtra("author", author);
+        startActivity(i);
 
-            @Override
-            public void onFailure(Call<Books> call, Throwable t) {
-            }
-    });
     }
 }
