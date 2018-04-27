@@ -1,4 +1,4 @@
-package com.greenfoxacademy.searchbook.actions;
+package com.greenfoxacademy.searchbook.actions.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

@@ -1,4 +1,4 @@
-package com.greenfoxacademy.searchbook.actions;
+package com.greenfoxacademy.searchbook.actions.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -7,11 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.view.LayoutInflater;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.greenfoxacademy.searchbook.R;
-import com.greenfoxacademy.searchbook.actions.modelForAuthorSearch.Doc;
 import com.greenfoxacademy.searchbook.actions.modelForAuthorSearch.DocList;
 
 public class RecyclerAdapterForAuthorSearch extends RecyclerView.Adapter<RecyclerAdapterForAuthorSearch.MyViewHolder> {

@@ -1,4 +1,4 @@
-package com.greenfoxacademy.searchbook.actions;
+package com.greenfoxacademy.searchbook.actions.action;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

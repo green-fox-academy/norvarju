@@ -15,6 +15,10 @@ public interface SubjectSearcher {
 
     @Headers({"Content-Type: application/json", "Accept: application/json"})
     @GET("/search.json")
+    Call<DocList> booksByID(@Query("isbn") String isbn);
+
+    @Headers({"Content-Type: application/json", "Accept: application/json"})
+    @GET("/search.json")
     Call<DocList> booksByAuthor(@Query("author") String author);
 
     @Headers({"Content-Type: application/json", "Accept: application/json"})
