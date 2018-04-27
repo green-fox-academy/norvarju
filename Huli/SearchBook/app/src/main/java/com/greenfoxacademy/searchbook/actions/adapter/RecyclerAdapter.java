@@ -34,7 +34,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.authorName.setText(works.get(position).getAuthors().get(0).getName());
+        if(works.get(position).getAuthors().size() != 0) {
+            holder.authorName.setText(works.get(position).getAuthors().get(0).getName());
+        } else {
+            holder.authorName.setText("Author is not found");
+        }
         holder.title.setText(works.get(position).getTitle());
     }
 
