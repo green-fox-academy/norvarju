@@ -36,7 +36,8 @@ public class Subcontroller {
   }
 
   @PostMapping("/dountil/{what}")
-  public Object getNumbersUntil(@PathVariable(name = "what") String what, @RequestBody Until
+  public Object getNumbersUntil(@PathVariable(name = "what") String what, @RequestBody(required =
+          false) Until
           until) {
     if(until == null) {
       return new FailUntil();

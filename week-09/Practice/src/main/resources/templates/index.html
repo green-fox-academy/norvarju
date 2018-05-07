@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pallida exam</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="utf-8" />
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center text-uppercase">Green Fox Fashion Web Store</h1>
+    <div class="row">
+        <form action="#" th:action="'/warehouse/'" method="post">
+            <select id="item" name="item">
+                <option value="0" selected="selected" hidden>Select item name</option>
+                <option th:each="item : ${items}" th:text="${item}" th:value="${item}" ></option>
+            </select>
+            <select id="size" name="size">
+                <option value="" selected="selected" hidden>Select size</option>
+                <option th:each="size : ${sizes}" th:text="${size}" th:value="${size}" ></option>
+            </select>
+            <input type="text" name="quantity"/>
+            <input class="text-uppercase" type="submit" value="get total"/>
+        </form>
+
+    </div></br>
+
+    <table class="table table-striped">
+        <tr class="headline text-center">
+            <td><strong>Item name</strong></td>
+            <td><strong>Manufecturer</strong></td>
+            <td><strong>Category</strong></td>
+            <td><strong>Size</strong></td>
+            <td><strong>Unit price</strong></td>
+        </tr>
+        <tr th:each="item : ${clothes}" class="text-center">
+            <td th:text="${item.getItemName()}"></td>
+            <td th:text="${item.getManufacturer()}"></td>
+            <td th:text="${item.getCategory()}"></td>
+            <td th:text="${item.getSize()}"></td>
+            <td th:text="${item.getUnitPrice()}"></td>
+        </tr>
+    </table>
+</div>
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+</html>

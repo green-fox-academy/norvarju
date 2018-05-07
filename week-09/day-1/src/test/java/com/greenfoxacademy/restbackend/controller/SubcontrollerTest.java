@@ -15,6 +15,7 @@ import java.nio.charset.Charset;
 
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
@@ -84,5 +85,28 @@ public class SubcontrollerTest {
     mockMvc.perform(get("/appenda/kuty"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.appended").value("kutya"));
+  }
+
+  @Test
+  public void DountilSumTest() throws Exception {
+    mockMvc.perform(post("/dountil/sum").contentType(MediaType.APPLICATION_JSON).content
+            ("{\"until\": 6}"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.result").value(21));
+  }
+
+  @Test
+  public void DountilFactorTest() throws Exception {
+    mockMvc.perform(post("/dountil/factor").contentType(MediaType.APPLICATION_JSON).content
+            ("{\"until\": 6}"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.result").value(720));
+  }
+
+  @Test
+  public void DountilTestNoUntil() throws Exception{
+    mockMvc.perform(post("/dountil/factor"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.error").value("Please provide a number!"));
   }
 }
